@@ -1,4 +1,4 @@
-import { renderComments } from "./renderComments.js";
+import { renderApp } from "./renderApp.js";
 import { getCommentsList } from "./CommentsList.js";
 import { newComments } from "./api.js";
 
@@ -15,12 +15,12 @@ const likeButtonsListeners = () => {
             likeButtonElement.classList.add("-loading-like");
             const comment = newComments[likeButtonElement.dataset.index];
 
-            delay(2000).then(() => {
+            delay().then(() => {
                 comment.likes = comment.isLiked ? comment.likes - 1 : comment.likes + 1;
                 comment.isLiked = !comment.isLiked;
             }).then(() => {
                 likeButtonElement.classList.remove("-loading-like");
-                renderComments(newComments, listElem, getCommentsList);
+                renderApp(newComments, listElem, getCommentsList);
             });
         });
     };
