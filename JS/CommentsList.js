@@ -1,5 +1,9 @@
 import { format } from "date-fns";
 
+const postDate = (date) => {
+  return format(new Date(date), 'yyyy-MM-dd hh.mm.ss');
+};
+
 const getCommentsList = (comment, index) => {
   return `<li class="comment" data-index="${index}">
           <div class="comment-header">
@@ -7,7 +11,7 @@ const getCommentsList = (comment, index) => {
               ${comment.author.name}
             </div>
             <div>
-              ${getActualDate(comment.date)}
+              ${postDate(comment.date)}
             </div>
           </div>
           <div class="comment-body">
