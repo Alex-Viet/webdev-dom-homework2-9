@@ -1,3 +1,5 @@
+import { format } from "./date-fns";
+
 const getCommentsList = (comment, index) => {
   return `<li class="comment" data-index="${index}">
           <div class="comment-header">
