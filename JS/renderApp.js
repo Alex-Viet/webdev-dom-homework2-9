@@ -70,7 +70,6 @@ const renderApp = (data, elem, getList) => {
                 return addComment.classList.add("error");
             };
 
-
             renderApp(data, elem, getList);
             postToApi(data, addComment, addName);
         });
